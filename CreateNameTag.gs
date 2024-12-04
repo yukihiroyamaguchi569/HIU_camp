@@ -9,9 +9,12 @@ function createNameTags() {
   
   // スプレッドシートを取得
   const presentation = SlidesApp.openById("1nYrlLEk9AiI67VCe1PKIK14tT0LAtPbd3YQ65znCYZw");
-  
-  // タイトルスライドを削除
-  presentation.getSlides()[0].remove();
+
+   // 2枚目以降のスライドを削除
+  const slides = presentation.getSlides();
+  for (let i = slides.length - 1; i > 0; i--) {
+    slides[i].remove();
+  }
   
   // 各参加者のスライドを作成
   for (let i = 1; i < values.length; i++) {
@@ -89,7 +92,11 @@ function createNameTags() {
       enmaShape.setWidth(40);
     }
   }
+
+    // 最後にタイトルスライド（1枚目）を削除
+  presentation.getSlides()[0].remove();
 }
+
 
 
 
