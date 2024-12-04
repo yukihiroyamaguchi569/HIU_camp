@@ -18,14 +18,14 @@ function createNameTags() {
   
   // 各参加者のスライドを作成
   for (let i = 1; i < values.length; i++) {
-    const [name,,,,,,,,gpt,yado1,keidro,yado2, enma] = values[i];
+    const [name,,,,,,,gpt,yado1,keidro,yado2, enma] = values[i];
 
       // 値が空の場合は空文字列を設定
-    const safeGpt = gpt || '';
-    const safeYado1 = yado1 || '';
-    const safeKeidro = keidro || '';
-    const safeYado2 = yado2 || '';
-    const safeEnma = enma || '';
+    const safeGpt = gpt || '✕';
+    const safeYado1 = yado1 || '✕';
+    const safeKeidro = keidro || '✕';
+    const safeYado2 = yado2 || '✕';
+    const safeEnma = enma || '✕';
     
     // 新しいスライドを追加
     const slide = presentation.appendSlide(SlidesApp.PredefinedLayout.BLANK);
